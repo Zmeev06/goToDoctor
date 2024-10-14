@@ -49,7 +49,7 @@ const userData = ref();
 const checkListName = ref("");
 const loading = ref(true);
 onMounted(async () => {
-  const patientSecondName = localStorage.getItem("Patient_second_name");
+  const patientSecondName = localStorage.getItem("Patient_last_name");
   const patientUName = localStorage.getItem("Patient_u_name");
 
   patientName.value = `${patientSecondName} ${patientUName}`;

@@ -54,12 +54,6 @@ onMounted(getPollDataByCategoryIdHandler);
 
     <div class="flex justify-center">
       <div class="w-[354px] max-w-full pb-[20px]">
-        <div class="flex flex-col gap-[22px] translate-y-[-10px]">
-          <p class="font-semibold text-[15px] leading-[18px] text-[#006879]">
-            Кто пойдет на приём?
-          </p>
-        </div>
-
         <RouterLink
           to="/parents2"
           v-if="people.length > 0"
@@ -73,9 +67,6 @@ onMounted(getPollDataByCategoryIdHandler);
                 class="font-semibold text-[24px] leading-[29px] text-[#016368]"
               >
                 {{ people[0].name }}
-              </p>
-              <p class="font-medium text-[15px] leading-[18px] text-[#979797]">
-                {{ people[0].preview_text }}
               </p>
             </div>
             <img
@@ -102,9 +93,6 @@ onMounted(getPollDataByCategoryIdHandler);
                 class="font-semibold text-[24px] leading-[29px] text-[#016368]"
               >
                 {{ people[1].name }}
-              </p>
-              <p class="font-medium text-[15px] leading-[18px] text-[#979797]">
-                {{ people[1].preview_text }}
               </p>
             </div>
           </div>
