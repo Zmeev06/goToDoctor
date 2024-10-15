@@ -40,7 +40,16 @@ onMounted(() => {
   );
   const selectedTime =
     localStorage.getItem("selectedTime") ?? "Время не указано";
-  const dateTime = `${selectedTime}`;
+
+  const formatDateTime = (dateTimeString: string) => {
+    const [datePart, timePart] = dateTimeString.split(" ");
+    const [year, month, day] = datePart.split("-");
+    const formattedDate = `${day}.${month}.${year}`;
+    const formattedTime = timePart.slice(0, 5);
+    return `${formattedDate} ${formattedTime}`;
+  };
+
+  const dateTime = formatDateTime(selectedTime);
 
   patientName.value = `${patientSecondName} ${patientUName}`.trim();
   clinicId.value = service.value = selectedService;

@@ -123,6 +123,13 @@ onMounted(() => {
     console.log("No user data found in localStorage");
   }
 });
+const formatDateTime = (dateTimeString: string) => {
+  const [datePart, timePart] = dateTimeString.split(" ");
+  const [year, month, day] = datePart.split("-");
+  const formattedDate = `${day}.${month}.${year}`;
+  const formattedTime = timePart.slice(0, 5);
+  return `${formattedDate} ${formattedTime}`;
+};
 </script>
 
 <template>
@@ -263,7 +270,7 @@ onMounted(() => {
                 {{ data.doctor_specialization }}
               </p>
               <p class="font-normal text-[15px] leading-6 text-[#979797]">
-                {{ new Date(data.datetime).toLocaleString() }}
+                {{ formatDateTime(data.datetime) }}
               </p>
               <div class="flex justify-between mt-[20px]">
                 <p

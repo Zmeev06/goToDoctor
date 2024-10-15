@@ -157,6 +157,13 @@ const submitForm = async () => {
 onMounted(() => {
   fetchAppointmentsData(selectedMonth.value);
 });
+const formatDateTime = (dateTimeString: string) => {
+  const [datePart, timePart] = dateTimeString.split(" ");
+  const [year, month, day] = datePart.split("-");
+  const formattedDate = `${day}.${month}.${year}`;
+  const formattedTime = timePart.slice(0, 5);
+  return `${formattedDate} ${formattedTime}`;
+};
 </script>
 
 <template>
@@ -234,7 +241,7 @@ onMounted(() => {
               {{ item.patient_name }}
             </p>
             <p class="text-[#A4A5A5] text-sm">
-              Время приема: {{ item.datetime }}
+              Время приема: {{ formatDateTime(item.datetime) }}
             </p>
             <p class="text-[#A4A5A5] text-sm">
               Прием: {{ item.first_reception ? "Первичный" : "Повторный" }}
@@ -331,5 +338,8 @@ onMounted(() => {
 .field {
   width: 100%;
   margin-bottom: 1rem;
+}
+.field textarea {
+  min-height: 40px;
 }
 </style>

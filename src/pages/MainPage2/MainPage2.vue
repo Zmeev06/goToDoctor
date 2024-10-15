@@ -6,7 +6,6 @@ import { getUserInfo } from "../../services/User/getUserInfo";
 import { useRouter } from "vue-router";
 import { getDoctorsCategory } from "@//services/main-doctors/getDoctorsCategory";
 import { getUserMessages } from "@/services/User/getUserMessages";
-import { getPatients } from "@/services/patients/getPatients.ts";
 import { getAppointmentsForDoc } from "@/services/reception/getAppointmentsForDoc";
 
 import NotificationBlock from "@/components/NotificationBlock";
@@ -95,6 +94,13 @@ onMounted(() => {
     console.log("No user data found in localStorage");
   }
 });
+const formatDateTime = (dateTimeString: string) => {
+  const [datePart, timePart] = dateTimeString.split(" ");
+  const [year, month, day] = datePart.split("-");
+  const formattedDate = `${day}.${month}.${year}`;
+  const formattedTime = timePart.slice(0, 5);
+  return `${formattedDate} ${formattedTime}`;
+};
 </script>
 
 <template>
@@ -194,7 +200,7 @@ onMounted(() => {
             {{ appointment.patient_name }}
           </p>
           <p class="text-[#A4A5A5] text-sm">
-            Время приема: {{ appointment.datetime }}
+            Время приема: {{ formatDateTime(appointment.datetime) }}
           </p>
         </div>
       </div>

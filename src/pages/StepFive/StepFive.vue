@@ -98,7 +98,7 @@ const formatDate = (date: string) => {
   if (!date) return false;
 
   const t = date.split("-");
-  return `${t[2]}-${t[1]}-${t[0]}`;
+  return `${t[2]}.${t[1]}.${t[0]}`;
 };
 </script>
 
@@ -174,7 +174,11 @@ const formatDate = (date: string) => {
               @click="isTimePickerOpen = true"
               :disabled="!selectedDate"
             >
-              {{ selectedTime ? selectedTime.split(" ")[1] : "Выбрать время" }}
+              {{
+                selectedTime
+                  ? selectedTime.split(" ")[1].slice(0, 5)
+                  : "Выбрать время"
+              }}
             </button>
           </div>
 
@@ -215,7 +219,7 @@ const formatDate = (date: string) => {
                     @click="selectTime(time)"
                     class="py-2 px-4 bg-[#00B9C2] text-white rounded w-[30%]"
                   >
-                    {{ time.split(" ")[1] }}
+                    {{ time.split(" ")[1].slice(0, 5) }}
                   </button>
                 </div>
               </div>
