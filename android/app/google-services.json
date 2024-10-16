@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "778136555291",
+    "project_id": "idykvrachu",
+    "storage_bucket": "idykvrachu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778136555291:android:ee66a49f328f499d200dbe",
+        "android_client_info": {
+          "package_name": "com.idykvrachy.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV2PyKHIStwjmNsX3ZJF_2x6dq9G1SLCI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

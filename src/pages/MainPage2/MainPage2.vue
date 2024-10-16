@@ -10,7 +10,7 @@ import { getAppointmentsForDoc } from "@/services/reception/getAppointmentsForDo
 
 import NotificationBlock from "@/components/NotificationBlock";
 import Popover from "primevue/popover";
-import OverlayBadge from "primevue/overlaybadge";
+import Badge from "primevue/badge";
 
 const router = useRouter();
 
@@ -68,18 +68,27 @@ const routeToPush = computed(() => {
   return user.value?.isDoctor ? "/lcdoctor" : "/lcpatient";
 });
 
+const readUserMessage = ref(0);
 const userMessages = ref([]);
 const fetchUserMessages = () => {
   getUserMessages().then(({ data, status }) => {
     if (status != 200) return;
 
     userMessages.value = data.data ?? [];
+
+    readUserMessage.value = +(localStorage.readUserMessage || 0);
   });
 };
 const notifyPopover = ref();
 const toggleNotifyPopover = (e: Event) => {
+  readUserMessage.value = userMessages.value.length;
+  localStorage.readUserMessage = readUserMessage.value;
+
   notifyPopover.value.toggle(e);
 };
+const countNewMessage = computed(() => {
+  return Math.max(userMessages.value.length - readUserMessage.value, 0);
+});
 
 onMounted(() => {
   fetchUserInfo();
@@ -168,13 +177,16 @@ const formatDateTime = (dateTimeString: string) => {
         class="w-[25px]"
         @click="toggleNotifyPopover"
       >
-        <OverlayBadge
-          :value="userMessages.length"
-          size="small"
-          severity="danger"
-        >
+        <div class="relative">
+          <Badge
+            v-if="countNewMessage > 0"
+            :value="countNewMessage"
+            size="small"
+            severity="danger"
+            class="absolute translate-x-[50%] translate-y-[-50%]"
+          />
           <img :src="colocol" />
-        </OverlayBadge>
+        </div>
       </div>
     </div>
     <Popover ref="notifyPopover">
