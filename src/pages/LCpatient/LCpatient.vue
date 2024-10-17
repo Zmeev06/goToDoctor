@@ -105,7 +105,7 @@ const logout = () => {
 </script>
 
 <template>
-  <PagesTemplate class="pb-[80px]" v-if="user">
+  <PagesTemplate class="pb-[80px]">
     <div class="h-[15vh]">
       <img :src="fon" class="mt-[43px] mx-auto w-full" />
     </div>
@@ -298,7 +298,6 @@ const logout = () => {
       </div>
     </div>
   </PagesTemplate>
-  <div v-else class="">Зарегистируйтесь</div>
 </template>
 <style scoped>
 .p-datepicker-input {

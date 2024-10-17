@@ -85,6 +85,7 @@
         </p>
 
         <input
+          type="tel"
           v-model="phone"
           class="w-full h-10 bg-[#E5F2FC] mt-[18px] rounded-[10px] pl-3 focus:outline-none focus:ring-2 focus:ring-[#00B9C2]"
           v-mask="'+7 (###) ###-##-##'"
