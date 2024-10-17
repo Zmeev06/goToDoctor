@@ -1,4 +1,4 @@
-package idykvrachy.ru;
+package com.idykvrachy.android;
 
 import com.getcapacitor.BridgeActivity;
 

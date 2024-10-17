@@ -3,11 +3,12 @@ import { ApiClient } from "../Client";
 
 export const updateDeviceToken = async () => {
   const formData = new FormData();
-  const token = localStorage.getItem("userData");
+  const deviceToken = localStorage.getItem("deviceToken");
+  const userData = localStorage.getItem("userData");
 
-  if (token) {
-    formData.append("token", JSON.parse(token).auth_token);
-    formData.append('bitrixUserId', JSON.parse(token).user_id)
+  if (deviceToken) {
+    formData.append('bitrixUserId', JSON.parse(userData).user_id)
+    formData.append("token", deviceToken);
   }
 
   try {

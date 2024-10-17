@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'idykvrachy.ru',
+  appId: 'com.idykvrachy.android',
   appName: 'gotodoctor',
   webDir: 'dist',
   plugins: {
