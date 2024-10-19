@@ -72,12 +72,9 @@ onMounted(() => {
                 v-for="item in doctorsCategory"
                 :key="item.category_id"
                 @click="selectCategory(item)"
-                class="w-full h-[73px] rounded-[13px] border shadow-lg flex px-[12px] py-[10px] gap-[9px] cursor-pointer"
+                class="w-full h-[73px] rounded-[13px] border shadow-lg flex px-[12px] py-[10px] gap-[14px] cursor-pointer items-center"
               >
-                <img
-                  class="w-[50px] h-[50px]"
-                  :src="`${DOMEN}${item.picture}`"
-                />
+                <img class="h-[35px]" :src="`${DOMEN}${item.picture}`" />
                 <p
                   class="font-semibold text-[15px] leading-[18px] text-[#00B9C2]"
                 >
@@ -94,7 +91,7 @@ onMounted(() => {
 
 <style scoped>
 input[type="text"] {
-  width: 364px;
+  width: 100%;
   height: 49px;
   box-sizing: border-box;
   border: 1px solid #cdcdcd;

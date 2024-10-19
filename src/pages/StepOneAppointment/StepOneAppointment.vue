@@ -69,6 +69,7 @@ onMounted(getPollThreeHandler);
 
 <style scoped>
 input[type="text"] {
+  width: 100%;
   height: 49px;
   box-sizing: border-box;
   border: 1px solid #cdcdcd;

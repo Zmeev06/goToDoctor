@@ -37,6 +37,7 @@ const selectDoctor = (doctor: IDoctor) => {
     query: {
       id: doctor.id,
       services: JSON.stringify(doctor.service_list),
+      doctorSpecialization: doctor.doctor_specialization,
     },
   });
 };

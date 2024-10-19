@@ -51,7 +51,7 @@ const selectService = (service: string) => {
                 @click="selectService(service)"
                 class="w-full h-[73px] rounded-[13px] border shadow-lg flex px-[12px] py-[10px] gap-[9px] cursor-pointer"
               >
-                <div>
+                <div class="flex flex-col justify-center">
                   <p
                     class="font-semibold text-[15px] leading-[18px] text-[#00B9C2]"
                   >
@@ -60,7 +60,7 @@ const selectService = (service: string) => {
                   <p
                     class="font-medium text-[13px] leading-[18px] text-[#979797]"
                   >
-                    Стоматолог
+                    {{ route.query?.doctorSpecialization }}
                   </p>
                 </div>
               </div>
@@ -74,7 +74,7 @@ const selectService = (service: string) => {
 
 <style scoped>
 input[type="text"] {
-  width: 364px;
+  width: 100%;
   height: 49px;
   box-sizing: border-box;
   border: 1px solid #cdcdcd;

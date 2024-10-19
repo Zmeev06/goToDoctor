@@ -6,9 +6,11 @@ import PagesTemplate from "@//components/shared/PagesTemplate.vue";
 
 <template>
   <PagesTemplate class="w-full">
-    <div class="h-[15vh]">
-      <img :src="fon" class="mt-[43px] mx-auto" />
-    </div>
+    <Teleport to="#head-bg">
+      <div class="h-[15vh]">
+        <img :src="fon" class="mt-[43px] mx-auto w-full" />
+      </div>
+    </Teleport>
     <div class="flex">
       <img
         :src="back"

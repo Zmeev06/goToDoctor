@@ -11,7 +11,7 @@ import { updateUser } from "@//services/User/updateUser";
 
 const router = useRouter();
 
-const user = ref();
+const user = ref({});
 
 const fetchUserInfo = async () => {
   const { data, status } = await getUserInfo();
@@ -106,9 +106,11 @@ const logout = () => {
 
 <template>
   <PagesTemplate class="pb-[80px]">
-    <div class="h-[15vh]">
-      <img :src="fon" class="mt-[43px] mx-auto w-full" />
-    </div>
+    <Teleport to="#head-bg">
+      <div class="h-[15vh]">
+        <img :src="fon" class="mt-[43px] mx-auto w-full" />
+      </div>
+    </Teleport>
     <div class="flex justify-between w-full relative">
       <img
         :src="back"

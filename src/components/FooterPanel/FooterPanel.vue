@@ -24,7 +24,7 @@ const mainpageRoute = computed(() => {
 <template>
   <Teleport to="body">
     <div
-      class="footer-panel flex justify-around py-3 w-full fixed bottom-0 bg-white"
+      class="footer-panel flex justify-around pt-3 pb-6 w-full fixed bottom-0 bg-white"
     >
       <RouterLink :to="mainpageRoute">
         <div class="flex flex-col justify-center items-center cursor-pointer">

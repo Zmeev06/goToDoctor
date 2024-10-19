@@ -134,9 +134,11 @@ const handleInput = (event) => {
 
 <template>
   <PagesTemplate class="pb-[80px]">
-    <div class="h-[15vh]">
-      <img :src="fon" class="mt-[43px] mx-auto w-[100%]" />
-    </div>
+    <Teleport to="#head-bg">
+      <div class="h-[15vh]">
+        <img :src="fon" class="mt-[43px] mx-auto w-full" />
+      </div>
+    </Teleport>
     <div class="flex">
       <img
         :src="back"

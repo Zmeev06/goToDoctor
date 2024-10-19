@@ -1,4 +1,5 @@
 <template>
+  <div id="head-bg"></div>
   <div>
     <Transition>
       <div class="preloader" v-if="isPreloader">
