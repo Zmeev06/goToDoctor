@@ -276,19 +276,10 @@ const logout = () => {
               Сохранить
             </p>
           </div>
-          <div
-            class="w-full h-[55px] rounded-[30px] bg-[#00B9C2] flex items-center justify-center mt-[34px]"
-          >
-            <p
-              class="text-[20px] leading-[24px] font-bold text-white cursor-pointer"
-            >
-              Оформить подписку
-            </p>
-          </div>
 
           <div
             @click="logout"
-            class="w-full h-[55px] rounded-[30px] bg-[#c94646] flex items-center justify-center mt-[34px]"
+            class="w-full h-[55px] rounded-[30px] bg-[#c94646] flex items-center justify-center mt-[25px]"
           >
             <p
               class="text-[20px] leading-[24px] font-bold text-white cursor-pointer"
