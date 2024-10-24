@@ -97,8 +97,8 @@ onMounted(() => {
 
   const userData = localStorage.getItem("userData");
   if (userData) {
-    user.value = JSON.parse(userData) as User;
-    fetchAppointments(user.value.auth_token);
+    const parsedUserData = JSON.parse(userData) as { auth_token: string };
+    fetchAppointments(parsedUserData.auth_token);
   } else {
     console.log("No user data found in localStorage");
   }

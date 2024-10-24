@@ -39,15 +39,13 @@ const doctors = ref();
 
 const fetchUserInfo = async () => {
   const { data, status } = await getUserInfo();
-  if (status === 200) {
-    if (data.success) {
-      const currentIsDoctor = user.value?.isDoctor;
+  if (status === 200 && data.success) {
+    const currentIsDoctor = user.value?.isDoctor;
 
-      user.value = {
-        ...data.data,
-        isDoctor: currentIsDoctor,
-      };
-    }
+    user.value = {
+      ...data.data,
+      isDoctor: currentIsDoctor,
+    };
   } else {
     console.log("Ошибка на сервере");
   }
@@ -127,8 +125,8 @@ onMounted(() => {
 
   const userData = localStorage.getItem("userData");
   if (userData) {
-    user.value = JSON.parse(userData) as User;
-    fetchPatients(user.value.auth_token);
+    const parsedUserData = JSON.parse(userData) as { auth_token: string };
+    fetchPatients(parsedUserData.auth_token);
   } else {
     console.log("No user data found in localStorage");
   }
