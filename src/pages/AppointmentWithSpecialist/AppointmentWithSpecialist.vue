@@ -147,7 +147,7 @@ onMounted(() => {
                 class="w-full h-[55px] rounded-[30px] bg-[#00B9C2] flex items-center justify-center mt-[34px] cursor-pointer"
               >
                 <p class="text-[20px] leading-[24px] font-bold text-white">
-                  Создать
+                  Добавить
                 </p>
               </div>
             </RouterLink>
