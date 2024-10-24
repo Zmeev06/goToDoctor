@@ -174,11 +174,21 @@ onMounted(getPatientsHandler);
                 >
                   Удалить
                 </button>
-                <button
-                  class="bg-[#00B9C2] text-white rounded-[7px] w-[166px] h-[28px] cursor-pointer"
+                <RouterLink
+                  :to="{
+                    path: '/lcchild',
+                    query: {
+                      token,
+                      patientId: patient.patient_id,
+                    },
+                  }"
                 >
-                  Редактировать
-                </button>
+                  <button
+                    class="bg-[#00B9C2] text-white rounded-[7px] w-[166px] h-[28px] cursor-pointer"
+                  >
+                    Редактировать
+                  </button>
+                </RouterLink>
               </div>
             </div>
           </div>
