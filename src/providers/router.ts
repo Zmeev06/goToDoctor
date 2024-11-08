@@ -10,6 +10,7 @@ router.beforeEach((to, _from, next) => {
   const user = localStorage.getItem("userData");
   const isRequireAuth = to.meta?.auth || false;
   const isRequireNoAuth = to.meta?.noAuth || false;
+
   if (isRequireAuth && !user) {
     next("/");
   } else if (isRequireNoAuth && user) {

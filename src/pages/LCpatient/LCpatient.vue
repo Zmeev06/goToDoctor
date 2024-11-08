@@ -8,6 +8,7 @@ import { useRouter } from "vue-router";
 import { ref, onMounted, watch } from "vue";
 import { getUserInfo } from "../../services/User/getUserInfo";
 import { updateUser } from "@//services/User/updateUser";
+import DeleteAccount from "@/components/DeleteAccount";
 
 const router = useRouter();
 
@@ -287,6 +288,8 @@ const logout = () => {
               Выйти
             </p>
           </div>
+
+          <DeleteAccount />
         </div>
       </div>
     </div>
