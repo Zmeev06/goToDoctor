@@ -193,7 +193,7 @@ const formatDate = (date: string) => {
               class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
             >
               <div
-                class="bg-white rounded-lg p-4 max-w-md mx-auto max-h-[400px] overflow-auto"
+                class="bg-white rounded-lg p-4 w-full max-w-md mx-auto max-h-[400px] overflow-auto"
               >
                 <h3 class="text-lg font-semibold mb-4">Выберите дату</h3>
                 <div class="flex flex-wrap gap-2 justify-around">
@@ -214,7 +214,7 @@ const formatDate = (date: string) => {
               class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
             >
               <div
-                class="bg-white rounded-lg p-4 max-w-md mx-auto max-h-[400px] overflow-auto"
+                class="bg-white rounded-lg p-4 w-full max-w-md mx-auto max-h-[400px] overflow-auto"
               >
                 <h3 class="text-lg font-semibold mb-4">Выберите время</h3>
                 <div class="flex flex-wrap gap-2 justify-around">
