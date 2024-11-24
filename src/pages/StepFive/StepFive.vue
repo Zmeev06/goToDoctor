@@ -46,14 +46,19 @@ onMounted(() => {
   clinicName.value = selectedClinic.name || "Клиника не указана";
   detailText.value = selectedDoctor.detail_text;
 
-  getDoctorSchedule(selectedDoctor.id);
+  const isAdaptation =
+    selectedService.value == "Адаптационная групповая встреча";
+  getDoctorSchedule(selectedDoctor.id, isAdaptation);
 });
 
-const getDoctorSchedule = async (doctorId: string) => {
+const getDoctorSchedule = async (doctorId: string, isAdaptation: boolean) => {
   try {
-    const response = await axios.get(
-      `https://idykvrachy.ru/api/receptions/getDoctorReceptions?doctorId=${doctorId}`
-    );
+    const defaultUrl = `https://idykvrachy.ru/api/receptions/getDoctorReceptions?doctorId=${doctorId}`;
+    const adaptationUrl = `https://idykvrachy.ru/api/receptions/getDoctorAdaptationReceptions?doctorId=${doctorId}`;
+
+    const url = isAdaptation ? adaptationUrl : defaultUrl;
+
+    const response = await axios.get(url);
     schedule.value = response.data;
   } catch (error) {
     console.error("Ошибка при загрузке расписания:", error);
