@@ -53,7 +53,7 @@ onMounted(() => {
       recaptchaWidgetId.value = window.grecaptcha.render(
         "recaptcha-container",
         {
-          sitekey: "6LfeotEqAAAAAIveWK7NU9LiEw-DM_aFU6_wyTus",
+          sitekey: "6LchatwqAAAAAFtvgAVND-B-qmgWTZ8BUbao3YMo",
           callback: onRecaptchaVerified,
         }
       );
