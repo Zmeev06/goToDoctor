@@ -117,13 +117,13 @@
 
         <p class="text-center text-[11px] text-[#666666] mt-[18px] pb-[20px]">
           Нажимая кнопку “Продолжить” я принимаю
-          <u class="cursor-pointer" @click="openPDF">
-            Пользовательское соглашение
-          </u>
+          <RouterLink to="/privatepolicy">
+            <u class="cursor-pointer"> Пользовательское соглашение </u>
+          </RouterLink>
           и даю согласие на
-          <u class="cursor-pointer" @click="openPDF">
-            обработку персональных данных
-          </u>
+          <RouterLink to="/privatepolicy">
+            <u class="cursor-pointer"> обработку персональных данных </u>
+          </RouterLink>
         </p>
 
         <div
@@ -175,7 +175,6 @@ import {
 } from "@//services/Auth/RegisterService";
 import { getAllSpecializations } from "@//services/service/getAllSpecializations";
 import img from "@assets/secondSlide.png";
-import privatePolicyPdf from "@/assets/privatepolicy.pdf";
 import { updateDeviceToken } from "@/services/User/updateDeviceToken";
 
 const router = useRouter();
@@ -203,13 +202,6 @@ const setRoleType = (value) => {
   } else {
     specialization.value = "";
   }
-};
-
-const openPDF = () => {
-  window.open(
-    "https://idykvrachy.ru//upload/legal/privatepolicy.pdf",
-    "_blank"
-  );
 };
 
 const updateSpecialization = (event) => {

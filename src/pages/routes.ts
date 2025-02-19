@@ -360,4 +360,15 @@ export const routes = [
     name: "Preloader",
     meta: { auth: true },
   },
+  {
+    path: "/privatepolicy",
+    component: () => import("./PrivatePolicy"),
+    name: "PrivatePolicy",
+  },
+  {
+    path: "/feedback",
+    component: () => import("./FeedBackPage"),
+    name: "FeedBackPage",
+    meta: { auth: true },
+  },
 ];

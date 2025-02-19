@@ -224,6 +224,18 @@ const formatDateTime = (dateTimeString: string) => {
     >
       Посмотреть все
     </button>
+
+    <RouterLink to="/feedback">
+      <div
+        class="mx-auto w-[246px] h-[44px] rounded-[30px] bg-[#00B9C2] flex items-center justify-center mt-[34px]"
+      >
+        <p
+          class="text-[20px] leading-[24px] font-bold text-white cursor-pointer"
+        >
+          Написать нам
+        </p>
+      </div>
+    </RouterLink>
   </PagesTemplate>
 </template>
 
