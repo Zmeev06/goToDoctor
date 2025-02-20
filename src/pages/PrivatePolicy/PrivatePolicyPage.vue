@@ -49,8 +49,8 @@ onMounted(() => {
     </div>
 
     <div class="flex justify-center px-4">
-      <div class="w-full max-w-screen-lg pb-[20px]">
-        <div class="flex flex-col gap-[22px] translate-y-[-10px]">
+      <div class="w-full max-w-screen-lg pb-[20px] pt-[30px]">
+        <div class="flex flex-col gap-[22px]">
           <div class="flex justify-center items-center">
             <p class="font-semibold text-[14px] leading-[13px] text-black">
               Политика конфиденциальности
