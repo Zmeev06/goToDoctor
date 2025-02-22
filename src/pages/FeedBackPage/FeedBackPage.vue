@@ -14,6 +14,7 @@ import iconProfile from "@//assets/icons/profile_feedback.svg";
 import iconSubtract from "@//assets/icons/subtract_feedback.svg";
 import iconTel from "@//assets/icons/tel_feedback.svg";
 import iconRight from "@//assets/icons/right_icon.svg";
+import closeIcon from "@assets/icons/closeIcon.svg";
 
 const toast = useToast();
 const router = useRouter();
@@ -161,6 +162,12 @@ const handleSubmit = async () => {
 
 <template>
   <div class="page-container">
+    <div class="close-container">
+      <button class="close icon" @click="router.back()">
+        <img :src="closeIcon" alt="" />
+      </button>
+    </div>
+
     <h1 class="page-title">Свяжитесь с нами</h1>
     <div class="info-box">
       <img :src="iconZnak" alt="" class="info-icon" />
@@ -397,5 +404,12 @@ const handleSubmit = async () => {
 }
 .submit-button:hover {
   background: #f86c6e;
+}
+
+.close-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
 }
 </style>
